@@ -13,20 +13,23 @@ html {
     font-size: 20px;
 }
 
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
     margin: 0 auto;
-    width: 100%;
-    box-sizing: border-box;
+    max-width: 100%;
     background-color: var(--primary-background-color);
     font-family: 'Open Sans', sans-serif;
     color: var(--primary-text-color);
-    font-weight: 400;
 }
 
 .button {
     font-size: 0.7rem;
     padding: 16px 30px;
-    color: var(--primary-background-color);
+    color: #FFF;
     font-weight: bold;
     background-color: var(--primary-color);
     border: 1px solid var(--primary-color);
@@ -75,6 +78,8 @@ body {
 
 .header {
     padding: 40px 0;
+    max-width: 100%;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, auto);
     justify-content: space-around;
@@ -89,6 +94,34 @@ body {
 
 .logo-name {
     font-weight: 600;
+}
+
+.hamburger {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    position: relative;
+    display: none;
+}
+
+.hamburger::before {
+    content: "";
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: -8px;
+}
+
+.hamburger::after {
+    content: "";
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    position: absolute;
+    bottom: -8px;
 }
 
 .navbar-menu {
@@ -136,7 +169,7 @@ body {
 
 .main-container {
     margin: 0 auto;
-    width: 80%;
+    max-width: 80%;
 }
 
 .hero {
@@ -145,14 +178,16 @@ body {
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+    row-gap: 48px;
 }
 
 .hero-container {
-    width: 35%;
+    max-width: 35%;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: flex-start;
+    row-gap: 30px;
 }
 
 .hero-title {
@@ -168,6 +203,7 @@ body {
 .hero-content {
     font-size: 1rem;
     line-height: 1.7rem;
+    margin: 0;
 }
 
 .hero-image {
@@ -196,16 +232,18 @@ body {
 }
 
 .feature-container {
-    width: 35%;
+    max-width: 35%;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: flex-start;
+    row-gap: 24px;
 }
 
 .feature-content {
     font-size: 1rem;
     line-height: 1.7rem;
+    margin: 0;
 }
 
 .feature:nth-child(odd) .feature-container {
@@ -308,6 +346,7 @@ body {
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-start;
+    row-gap: 26px;
 }
 
 .blog-image {
@@ -320,34 +359,38 @@ body {
     justify-content: center;
     align-items: flex-start;
     flex-grow: 1;
+    min-width: 50%;
 }
 
 .blog-title {
-    margin: 26px 0 6px;
+    margin: 0 0 6px;
     color: var(--heading-color);
     font-size: 1.1rem;
     line-height: 1.5rem;
     font-weight: 600;
     letter-spacing: -1px;
+
 }
 
 .blog-content {
-    margin-bottom: 26px;
+    margin: 6px 0 26px;
     font-size: 0.8rem;
     line-height: 1.3rem;
     flex-grow: 1;
 }
 
 .footer {
-    margin-top: 370px;
     padding: 245px 0 40px;
+    max-width: 100%;
+    margin: 0 auto;
+    margin-top: 370px;
     background-color: #ECEBFF99;
     position: relative;
 }
 
 .contact-banner {
     padding: 84px;
-    width: 732px;
+    width: 900px;
     background-color: var(--heading-color);
     border-radius: 2px;
     display: flex;
@@ -371,7 +414,7 @@ body {
 }
 
 .footer-container {
-    width: 900px;
+    max-width: 900px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(4, auto);
@@ -380,6 +423,7 @@ body {
 
 .footer-menu-title {
     color: var(--heading-color);
+    margin: 24px 0;
     font-size: 0.9rem;
     line-height: 1.2rem;
     font-weight: 600;
